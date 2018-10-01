@@ -28,7 +28,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header filterList={function (keyword) { this.filterListFn(keyword).bind(this)}} />        
+        <Header filterList={function (keyword) { this.filterListFn(keyword)}.bind(this)} />        
         <List data={this.state.filtered} />
       </div>
     );
