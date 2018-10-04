@@ -12,6 +12,7 @@ class List extends Component {
             "keyword": ""
         }
         this.listItem = this.listItem.bind(this);
+        this.deleteuser = this.deleteuser.bind(this);
     }    
     render() { 
         console.log(this.props.data)
@@ -21,11 +22,14 @@ class List extends Component {
             </div>
         );
     }
+    deleteuser(index){
+        console.log("deleteuser")
+    }
 
     listItem = (rval) => {
         return rval.map(item => {
             return(
-                <ListItem item={item} key={item.id} />
+                <ListItem item={item} key={item.id} deleteuser={this.deleteuser} />
             )
         })
     }
