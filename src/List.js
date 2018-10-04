@@ -7,29 +7,31 @@ class List extends Component {
     constructor(props){
         super(props);
 
-        this.state = {
-            "data": MyData,
-            "keyword": ""
-        }
+        // this.state = {
+        //     "data": MyData,
+        //     "keyword": ""
+        // }
         this.listItem = this.listItem.bind(this);
-        this.deleteuser = this.deleteuser.bind(this);
+        
     }    
     render() { 
         console.log(this.props.data)
         return (
             <div>
                 {this.listItem(this.props.data)}
+                {this.deleteEvent(this.props.deleteuser)}
             </div>
         );
     }
-    deleteuser(index){
-        console.log("deleteuser")
+    
+    deleteEvent(){
+
     }
 
     listItem = (rval) => {
         return rval.map(item => {
             return(
-                <ListItem item={item} key={item.id} deleteuser={this.deleteuser} />
+                <ListItem item={item} key={item.id} deleteEvent={this.deleteEvent} />
             )
         })
     }

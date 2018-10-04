@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
 import Header from './Header.js';
 import List from './List.js';
-
 import MyData from './userdata.json';
-
 
 class App extends Component {
   constructor(props){
     super(props);
-
     this.state = {
       'data': MyData,
       'filtered': MyData
-    }
-
+    }    
   }
 
   filterListFn = (keyword) => {
@@ -23,13 +19,15 @@ class App extends Component {
     this.setState({filtered});
   }
 
-  
+  deleteuser(){
+    console.log("deleteuser function call")
+  }
 
   render() {
     return (
       <div>
         <Header filterList={(keyword) => this.filterListFn(keyword)} />        
-        <List data={this.state.filtered} />
+        <List data={this.state.filtered} deleteuser={this.deleteuser} />
       </div>
     );
   }
