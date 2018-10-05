@@ -24,8 +24,8 @@ class List extends Component {
         );
     }
     
-    deleteEvent(){
-
+    deleteEvent(id){
+        this.props.deleteuser(id)
     }
 
     listItem = (rval) => {

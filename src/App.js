@@ -19,8 +19,8 @@ class App extends Component {
     this.setState({filtered});
   }
 
-  deleteuser(){
-    console.log("deleteuser function call")
+  deleteuser(id){
+    console.log(id)
   }
 
   render() {
