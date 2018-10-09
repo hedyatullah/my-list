@@ -10,6 +10,7 @@ class App extends Component {
       'data': MyData,
       'filtered': MyData
     }    
+    this.deleteuser = this.deleteuser.bind(this);
   }
 
   filterListFn = (keyword) => {

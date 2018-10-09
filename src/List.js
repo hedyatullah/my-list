@@ -18,20 +18,19 @@ class List extends Component {
         console.log(this.props.data)
         return (
             <div>
-                {this.listItem(this.props.data)}
-                {this.deleteEvent(this.props.deleteuser)}
+                {this.listItem(this.props.data)}                
             </div>
         );
     }
     
-    deleteEvent(id){
-        this.props.deleteuser(id)
-    }
+    // deleteEvent(id){
+    //     this.props.deleteuser(id)
+    // }
 
     listItem = (rval) => {
         return rval.map(item => {
             return(
-                <ListItem item={item} key={item.id} deleteEvent={this.deleteEvent} />
+                <ListItem item={item} key={item.id} deleteEvent={this.props.deleteuser} />
             )
         })
     }
