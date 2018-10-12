@@ -28,9 +28,14 @@ class List extends Component {
     // }
 
     listItem = (rval) => {
-        return rval.map(item => {
+        return rval.map((item, itemIndex) => {
             return(
-                <ListItem item={item} key={item.id} deleteEvent={this.props.deleteuser} />
+                <ListItem item={item} key={item.id} 
+                deleteEvent={this.props.deleteuser} 
+                editEvent={this.props.edituser}
+                cancelEvent={this.props.canceluser}
+                updateEvent={this.props.updateuser}
+                itemIndex={itemIndex} />
             )
         })
     }
